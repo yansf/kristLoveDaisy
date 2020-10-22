@@ -163,7 +163,7 @@
             ctx.scale(scale, scale);
             ctx.moveTo(0, 0);
     	    ctx.lineTo(15, 15);
-    	    ctx.lineTo(60, 15);
+    	    ctx.lineTo(70, 15);
             ctx.stroke();
 
             ctx.moveTo(0, 0);
@@ -187,7 +187,7 @@
 
     Footer = function(tree, width, height, speed) {
         this.tree = tree;
-        this.point = new Point(tree.seed.heart.point.x, tree.height - height / 2);
+        this.point = new Point(tree.seed.heart.point.x, tree.height - height/2);
         this.width = width;
         this.height = height;
         this.speed = speed || 2;
@@ -264,7 +264,8 @@
                 width = bloom.width || this.width,
                 height = bloom.height || this.height,
                 figure = this.seed.heart.figure;
-            var r = 240, x, y;
+            var r = 200, x, y;
+            console.log(width,height, num, r,figure)
             for (var i = 0; i < num; i++) {
                 cache.push(this.createBloom(width, height, r, figure));
             }
@@ -298,9 +299,9 @@
             var s = this, b, p1, p2, p3, r, l, c;
         	for (var i = 0; i < branchs.length; i++) {
                 b = branchs[i];
-                p1 = new Point(b[0], b[1]);
-                p2 = new Point(b[2], b[3]);
-                p3 = new Point(b[4], b[5]);
+                p1 = new Point(b[0]-310, b[1]);
+                p2 = new Point(b[2]-310, b[3]);
+                p3 = new Point(b[4]-310, b[5]);
                 r = b[6];
                 l = b[7];
                 c = b[8]
